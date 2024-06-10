@@ -1,0 +1,22 @@
+<P>Here ,Project was developed using two approaches 1)todo list using touch event[elements get added and deleted using touch (change,click events are used)]
+    2)todo list using buttons [click event is used here]
+</P>
+<marquee behavior="scroll" direction="left" [scrollAmount]="9" >
+    <p class="linear-grad">Simple Todo List</p>
+</marquee>
+
+ <div class="align-input">
+<input  class="touch-input" type="text" placeholder="Enter an Item To add..." [(ngModel)]="todoItems" (change)="addTodoItem()" >
+</div>
+<ul>
+    <li class="li-itemstouch" *ngFor="let todo of allTodo" (click)="removeTodo(todo)">{{todo}}</li>
+</ul>
+
+<div class="items-input">
+<input class="input" type="text" placeholder="Enter the Items!....." [(ngModel)]="item"><button (click)="addItem()" class="add">Add</button>
+</div>
+<ul>
+    <li class="li_items" *ngFor="let item of Items" >{{item}} <button id="align" class="delete" (click)="removeItem(item)">Delete</button></li>
+</ul>
+
+
